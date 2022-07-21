@@ -1,16 +1,17 @@
-function CareScale({careType,scaleValue}){
-    // const {scaleValue, careType} = props
-    const range = [1,2,3]
+function CareScale({ scaleValue, careType }) {
+	const range = [1, 2, 3]
+	const scaleType =
+		careType === 'light' ? "☀️" : "💧"
 
-    const element = careType === "light" ? "☀️" : "💧"
-
-    return (
-        <div> 
-            {range.map((rangeElem) =>
-            scaleValue >= rangeElem ? <span key={rangeElem.toString()}> {element} </span> : null 
-            )}
-        </div>
-    )
+	return (
+		<div>
+			{range.map((rangeElem) =>
+				scaleValue >= rangeElem ? (
+					<span key={rangeElem.toString()}>{scaleType}</span>
+				) : null
+			)}
+		</div>
+	)
 }
 
 export default CareScale
